@@ -15,16 +15,22 @@ https://api.openweathermap.org/data/2.5/weather?lat=40.749&lon=-74.2639&units=Im
   */
 export const FETCH_WEATHER = 'FETCH_WEATHER';
 /*
-We exctract our types into a const to keep our types consistent
-between actions & reducers. This is conventtion
+We extract our types into a const to keep our types consistent
+between actions & reducers. This is conventtion. fetchWeather() is our action creator
 */
 export function fetchWeather(city) {
   const url = `${ROOT_URL}&q=${city},us`;
+  /* axios returns a promise by default*/
   const request = axios.get(url);
-
-  /* note that we are returning the promise as the payload key here*/
+  console.log('Request/Promise: ',request);
+  /* note that we are assigning the promise to the payload key here, and
+   note that the promise itself doesn't actually contain our data but redux-promise(middleware)
+   sees the promise And stops the action entirely and once the request finishes it
+   dispatches a new action of the same type but with a payload of the
+   resolved request so really it just unwrapps the promise for us
+   Ahh, the beauty of middleware*/
   return {
-    type: 'FETCH_WEATHER',
+    type: FETCH_WEATHER,
 	payload: request
   };
 }

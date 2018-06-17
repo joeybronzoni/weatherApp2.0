@@ -1,0 +1,22 @@
+/*
+  for style of the charts: (*note i used svgHeight & svgWidth instead)
+*/
+
+td, th {
+    vertical-align: middle !important;
+    text-align: center !important;
+}
+
+.input-group {
+    margin: 20px 0px;
+}
+
+/*only need if not using svgHeight & svgWidth
+svg {
+    height: 150px;
+}
+*/
+td:first-of-type, td:first-of-type > div {
+    height: 190px;
+    width: 250px;
+}
