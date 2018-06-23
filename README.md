@@ -11,6 +11,6 @@ Built with the following technologies:
 * axios
 * react-sparklines
 * lodash
-* and Materialize, Anime, and Vegas.
+
 
  ![demo of WeatherApp search ](https://raw.githubusercontent.com/josephskrzysowski/weatherApp2.0/master/WeatherApp.gif?raw=true)
